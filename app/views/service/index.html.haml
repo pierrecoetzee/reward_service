@@ -1,0 +1,22 @@
+%h3
+  Eligible rewards
+
+%main
+  =form_for '', {url: eligible_rewards_path, method: 'post' } do |f|
+
+    -if @reward    
+      .control-group.pull-right.box-results
+        %h3 The customer qualifies for:
+        -@reward.as_json.each_with_index do |reward,i|
+          %section="#{i+1}) #{reward}"
+
+    .control-group
+      =f.text_field 'account_id', placeholder: 'account id' , required: true
+
+    .control-group
+      =f.text_field 'id', placeholder: 'portfolio id' , required: true
+
+    .control-group
+      =f.submit 'Check rewards', class: 'btn btn-primary'
+
+

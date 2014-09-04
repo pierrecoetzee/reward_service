@@ -1,0 +1,11 @@
+channel_subscription1:
+  channel: 0
+  portfolio: portfolio1
+
+channel_subscription2:
+  channel: 3
+  portfolio: portfolio1 
+
+no_reward:
+  channel: 3
+  portfolio: portfolio2
