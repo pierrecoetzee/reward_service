@@ -7,8 +7,14 @@
     -if @reward    
       .control-group.pull-right.box-results
         %h3 The customer qualifies for:
-        -@reward.as_json.each_with_index do |reward,i|
-          %section="#{i+1}) #{reward}"
+        %table.table.table-striped.margin
+          %thead 
+            %td
+            %td Reward
+          -@reward.as_json.each_with_index do |reward,i|
+            %tr
+              %td=i+1
+              %td=reward
 
     .control-group
       =f.text_field 'account_id', placeholder: 'account id' , required: true
